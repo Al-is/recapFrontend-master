@@ -1,0 +1,41 @@
+<div class="mb-3">
+  <label for="filterText1" class="form-label"><mark>MARKA ARA</mark></label>
+    
+  <input type="text" [(ngModel)]="filterText1" class="form-control" id="filterText1" placeholder="Örnek:Ford">
+</div>
+
+<h5><mark>MARKALAR</mark> </h5>
+ 
+
+<ul class="list-group"> 
+  <li (click)="setCurrentBrand(brand)" 
+  routerLink = "/cars/brand/{{brand.id}}"
+  *ngFor="let brand of brands | brandFilter : filterText1"
+  [class]="getCurrentBrandClass(brand)">
+  {{brand.brandName}}
+
+  </li>
+  <button type="button" class="btn btn-info"routerLink = "/cars/addbrand"  ><strong>Marka Ekle</strong> </button>
+
+</ul> 
+<br>
+<div class="mb-3" style="padding-top: 15;">
+  <label for="filterText2" class="form-label"><mark>RENK ARA</mark></label>
+    
+  <input type="text" [(ngModel)]="filterText2" class="form-control" id="filterText2" placeholder="Örnek:Beyaz">
+</div>
+<h5><mark>RENKLER</mark> </h5>
+ 
+
+<ul class="list-group"> 
+  <li (click)="setCurrentColor(color)" 
+  routerLink = "/cars/color/{{color.id}}"
+  *ngFor="let color of colors |colorFilter :filterText2"
+  [class]="getCurrentColorClass(color)">
+  {{color.colorName}}
+
+  </li>
+  <button type="button" class="btn btn-info" routerLink = "/cars/addcolor"  ><strong>Renk Ekle</strong> </button>
+  
+
+</ul> 

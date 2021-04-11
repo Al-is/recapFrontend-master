@@ -1,0 +1,24 @@
+
+  
+  <table class="table table-striped table-active">
+
+    <thead class="thead-light">
+        <tr>
+            <th>Marka</th>
+            <th>Renk</th>
+            <th>Müşteri</th>
+            <th>Kiralama Tarihi</th>
+            <th>Dönüş Tarihi</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let rental of rentals">
+        <td>{{rental.brandName}}</td>
+        <td>{{rental.colorName}}</td>
+        <td>{{rental.firstName + " " +rental.lastName}}</td>
+        <td>{{rental.rentDate}}</td>
+        <td>{{rental.returnDate}}</td>
+    </tr>
+    </tbody>
+    
+  </table>
